@@ -1,3 +1,4 @@
+{#
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello UserController!{% endblock %}
@@ -20,4 +21,63 @@
 
     user olan mahmut
 </div>
+{% endblock %}
+
+#}
+
+
+{% extends 'form/baseSignUp.html.twig' %}
+
+{% block header %}
+    {% include 'form/headerSignUp.html.twig' %}
+
+{% endblock %}
+
+{% block navbar %}
+    {% include 'inc/navbar.html.twig' %}
+
+{% endblock %}
+
+
+{% block body %}
+
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success">
+                            <span>{{ message }}</span>
+                        </div>
+                    {% endfor %}
+                    <h5 class="title">Edit Profile</h5>
+                </div>
+                {{ form_start(registrationForm ) }}
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-md-3 px-1">
+                            {{ form_row(registrationForm.email) }}
+                        </div>
+                        <div class="col-md-5 pl-1">
+                            <div class="form-group">
+                                {{ form_label(registrationForm.plainPassword, 'Password') }}
+                                {{ form_widget(registrationForm.plainPassword) }}
+                                <small>{{ form_help(registrationForm.plainPassword) }}</small>
+                            </div>
+                        </div>
+                    </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                </div>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
 {% endblock %}

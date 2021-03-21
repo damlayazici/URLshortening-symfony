@@ -1,3 +1,4 @@
+{#
 {% extends 'base.html.twig' %}
 
 {% block title %}Log in!{% endblock %}
@@ -23,7 +24,8 @@
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}">
 
-    {#
+    #}
+{#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html
 
@@ -32,10 +34,72 @@
                 <input type="checkbox" name="_remember_me"> Remember me
             </label>
         </div>
-    #}
+    #}{#
+
 
     <button class="btn btn-lg btn-primary" type="submit">
         Sign in
     </button>
 </form>
+{% endblock %}
+#}
+
+
+{% extends 'security/baseLogin.html.twig' %}
+
+{% block header %}
+    {% include 'registration/headerLogin.html.twig' %}
+
+{% endblock %}
+
+
+
+{% block body %}
+
+
+
+{% block content %}
+
+        <form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+
+        {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+{#
+    <div class="fadeIn first">
+      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+    </div>
+#}
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second " name="login" placeholder="login" value="{{ last_username }}">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}">
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
+
 {% endblock %}
