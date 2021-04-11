@@ -16,14 +16,14 @@ Bu site kullanıcılara kayıt olmadan da url kısaltma imkanı sunmaktadır.
 <hr>
 
 * #### Kayıt
-![session](https://github.com/damlayazici/URLshortening-symfony/blob/master/register.png)
+![session](https://github.com/damlayazici/URLshortening-symfony/blob/master/register.PNG)
 
 <hr>
 
 * #### Profil Bilgi Düzenle
-![session](https://github.com/damlayazici/URLshortening-symfony/blob/master/editprofile.png)
+![session](https://github.com/damlayazici/URLshortening-symfony/blob/master/editprofile.PNG)
 
 <hr>
 
 * #### Giriş Yap
-![session](https://github.com/damlayazici/URLshortening-symfony/blob/master/login.png)
+![session](https://github.com/damlayazici/URLshortening-symfony/blob/master/login.PNG)
