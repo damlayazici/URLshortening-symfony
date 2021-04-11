@@ -22,7 +22,6 @@
     user olan mahmut
 </div>
 {% endblock %}
-
 #}
 
 
@@ -42,9 +41,42 @@
 {% block body %}
 
 
+    {% block content %}
 
-{% block content %}
+        {# <div class="container">
     <div class="row">
+		<div class="span12">
+			<form class="form-horizontal" >
+			  <fieldset>
+			    <div id="legend">
+			      <legend class="">Login</legend>
+			    </div>
+                  {{ form_start(registrationForm ) }}
+			    <div class="control-group">
+			      <!-- Username -->
+                    {{ form_row(registrationForm.email, {label: 'Email' , 'attr':{'class':'form-control controls input-xlarge'}} ) }}
+			    </div>
+			    <div class="control-group">
+			      <!-- Password-->
+					{{ form_label(registrationForm.plainPassword, 'Password') }}
+                                {{ form_widget(registrationForm.plainPassword, {'attr':{'class':'form-horizontal controls input-xlarge'}}) }}
+                                <small>{{ form_help(registrationForm.plainPassword) }}</small>
+			    </div>
+			    <div class="control-group">
+			      <!-- Button -->
+                    {{ form_end(registrationForm) }}
+			      <div class="controls">
+			        <button class="btn btn-success btn-fill btn-primary">Save</button>
+			      </div>
+			    </div>
+			  </fieldset>
+			</form>
+		</div>
+	</div>
+</div> #}
+
+
+        <div class="row">
         <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="card-header">
@@ -70,14 +102,22 @@
                             </div>
                         </div>
                     </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                    {{ form_end(registrationForm) }}
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                        //buna basınca home sayfasına yönlendirmeyi dene!!!
+                    </div>
+
                 </div>
-                {{ form_end(registrationForm) }}
             </div>
         </div>
-    </div>
-{% endblock %}
+
+
+
+
+
+
+    {% endblock %}
 
 
 {% endblock %}

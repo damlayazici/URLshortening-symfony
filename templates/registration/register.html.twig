@@ -59,6 +59,10 @@
 
                         </div>
                         <div class="form-group">
+                            {{ form_row(registrationForm.name ) }}
+
+                        </div>
+                        <div class="form-group">
                             {{ form_row(registrationForm.plainPassword, {label: 'Password' , 'attr':{'class':'form-control',
                                 id: 'myInput' , placeholder: 'Your Password *', type: 'password'}}  ) }}
 
